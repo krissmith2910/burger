@@ -15,13 +15,13 @@
 
             <div class="input-group">
 
-              <p> {{this.burger_name}} </p>
+              <p class="burger_name"> {{this.burger_name}} </p>
 
               <span class="input-group-btn">
 
-                <form action="/{{this.id}}?_method=PUT">
+                <form>
                   <input type="hidden" name="devoured" value="true">
-                  <button class="btn btn-default btn-sm" type="submit"> Devour It! </button>
+                  <button class="btn btn-default btn-sm btn-devour" type="submit"> Devour It! </button>
                 </form>
               
               </span>
