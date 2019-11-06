@@ -16,7 +16,7 @@ function objToSql(ob) {
 
   for (var key in ob) {
     if (Object.hasOwnProperty.call(ob, key)) {
-      aray.push(key + "=" + ob[key]);
+      array.push(key + "=" + ob[key]);
     }
   }
 

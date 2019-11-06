@@ -21,12 +21,12 @@ router.post("/", function(req, res) {
 });
 
 router.put("/:id", function(req, res) {
-	var condition = "id = " + req.params.id;
+	var condition = "burger_name ='" + req.params.id.trim() + "'";
 
 	console.log("condition", condition);
 
-	burger.update({ devoured: req.body.devoured}, condition, function() {
-		res.redirect("/");
+	burger.update({ devoured: 1}, condition, function() {
+		res.sendStatus(200).end();
 	});
 });
 

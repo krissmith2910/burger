@@ -1,18 +1,23 @@
-const devourBurger = document.querySelectorAll(".btn-devour")
-devourBurger.forEach(function(element){
-   element.addEventListener("click",function(event){
-       event.preventDefault();
-       let submitDevour = {burger_name: $(".burger_name").text()};
-       console.log(submitDevour);
+const devourBurger = $("li.list-group-item")
+devourBurger.each(function () {
+    const element = $(this)
+    const btn = element.find(".btn-devour")
+    const name = element.find(".burger_name").text()
+    btn.click(function (event) {
+        event.preventDefault();
+        console.log(name);
 
-$.ajax("/api/devour", {
-    type: "PUT",
-    data: submitDevour
+
+        $.ajax("/" + name, {
+            type: "PUT",
+            
+        })
+            .then(function (resp) {
+                console.log(resp)
+                location.reload()
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+    })
 })
-.then(function(resp){
-  console.log(resp)
-  location.reload()
-})
-.catch(function(err){
-  console.log(err)
-});
