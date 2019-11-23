@@ -8,8 +8,6 @@ router.get("/", function(req, res) {
 	burger.all(function(data) {
 		var hbsObject = {burgers: data};
 
-		// console.log(hbsObject);
-
 		res.render("index", hbsObject);
 	});
 });
@@ -21,11 +19,10 @@ router.post("/", function(req, res) {
 });
 
 router.put("/:id", function(req, res) {
-	var condition = "burger_name ='" + req.params.id.trim() + "'";
+	var condition = "burger_name = '" + req.params.id.trim() + "'";
 
-	console.log("condition", condition);
 
-	burger.update({ devoured: 1}, condition, function() {
+	burger.update({ devoured: 1 }, condition, function() {
 		res.sendStatus(200).end();
 	});
 });

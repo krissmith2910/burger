@@ -21,7 +21,7 @@
 
                 <form>
                   <input type="hidden" name="devoured" value="true">
-                  <button class="btn btn-default btn-sm btn-devour" type="submit"> Devour It! </button>
+                  <button class="btn btn-default btn-sm btn-devour" data-id="{{this.id}}" id="btn-devour" > Devour It! </button>
                 </form>
               
               </span>
@@ -73,7 +73,7 @@
     <form class="create-update-form" action="/" method="POST">
 
       <div class="form-group">
-        <textarea class="form-control input-md" type="text" name="name" rows="3"> </textarea>
+        <textarea class="form-control input-md" type="text" name="name" rows="3"></textarea>
       </div>
 
       <button class="btn btn-default btn-lg" type="submit">Add Burger!</button>
